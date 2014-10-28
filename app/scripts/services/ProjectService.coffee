@@ -13,7 +13,7 @@ ProjectService = ($q, $http) ->
       .success (data) ->
         deferred.resolve data
       .error (err, status) ->
-        deferred.reject err, status
+        deferred.reject status
 
     return deferred.promise
 

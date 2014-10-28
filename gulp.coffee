@@ -66,6 +66,12 @@ gulp.task 'html', ->
     .pipe gulp.dest paths.dest
     .pipe livereload server
 
+  # Copy views
+  gulp.src paths.src + 'views/**/*.html'
+    .pipe plumber()
+    .pipe gulp.dest paths.dest + 'views/'
+    .pipe livereload server
+
 
 # Clean task
 gulp.task 'clean', ->
@@ -73,7 +79,7 @@ gulp.task 'clean', ->
     .pipe rimraf { force: true }
 
 
-# Vendors
+# Vendors scripts task
 gulp.task 'vendor-scripts', ->
   stream = gulp.src [
     paths.vendor + 'scripts/angular.js'
@@ -86,6 +92,19 @@ gulp.task 'vendor-scripts', ->
 
   stream.pipe gulp.dest paths.dest + 'js/'
 
+
+# Vendors styles task
+gulp.task 'vendor-styles', ->
+  stream = gulp.src paths.vendor + 'styles/**/*.*'
+    .pipe plumber()
+    .pipe concat 'vendor.css'
+
+  if environment is 'production'
+    stream.pipe minify()
+
+  stream.pipe gulp.dest paths.dest + 'css/'
+
+
 # Watch
 gulp.task 'watch', ->
   # Listen to tiny-lr notification
@@ -96,11 +115,11 @@ gulp.task 'watch', ->
 
     gulp.watch paths.src + 'scripts/**/*.coffee', ['scripts']
     gulp.watch paths.src + 'styles/**/*.styl', ['styles']
-    gulp.watch paths.src + 'index.html', ['html']
+    gulp.watch [paths.src + 'index.html', paths.src + 'views/**/*.html'], ['html']
 
 
 # Helper tasks
-gulp.task 'vendor', ['vendor-scripts']
+gulp.task 'vendor', ['vendor-scripts', 'vendor-styles']
 
-gulp.task 'compile', ['clean', 'scripts', 'styles', 'html']
+gulp.task 'compile', ['scripts', 'styles', 'html']
 gulp.task 'default', ['assets', 'vendor', 'compile']

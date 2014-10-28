@@ -5,7 +5,12 @@ controllersModule = require './_index'
 # ---
 
 MainCtrl = ($scope, ProjectService) ->
-  $scope.testVar = ProjectService.get()
+
+  $scope.title = 'This is a running app now...'
+
+  # Load project data
+  ProjectService.get().then (projects) ->
+    $scope.exp = projects
 
 # ---
 # Add to the module
