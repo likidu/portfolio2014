@@ -24,7 +24,7 @@ paths =
 # Assets task
 gulp.task 'assets', ->
   gulp.src paths.assets + '**'
-    .pipe gulp.dest paths.dest
+    .pipe gulp.dest paths.dest + 'assets/'
     .pipe livereload server
 
 

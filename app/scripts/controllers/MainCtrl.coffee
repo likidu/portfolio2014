@@ -4,8 +4,8 @@ controllersModule = require './_index'
 # @ngInject
 # ---
 
-MainCtrl = ($scope) ->
-  $scope.testVar = "This is a running Angular app, very nice!"
+MainCtrl = ($scope, ProjectService) ->
+  $scope.testVar = ProjectService.get()
 
 # ---
 # Add to the module

@@ -1,0 +1,12 @@
+{
+  "projects": [
+    {
+      "name": "SAP Business ByDesign",
+      "description": "This was a nice project"
+    },
+    {
+      "name": "Microsoft System Center Advisor",
+      "description": "This was another nice project"
+    }
+  ]
+}
