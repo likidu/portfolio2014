@@ -82,7 +82,7 @@ gulp.task 'clean', ->
 # Vendors scripts task
 gulp.task 'vendor-scripts', ->
   stream = gulp.src [
-    paths.vendor + 'scripts/angular.js'
+    paths.vendor + 'scripts/skrollr.js'
   ]
     .pipe plumber()
     .pipe concat 'vendor.js'
@@ -95,7 +95,7 @@ gulp.task 'vendor-scripts', ->
 
 # Vendors styles task
 gulp.task 'vendor-styles', ->
-  stream = gulp.src paths.vendor + 'styles/**/*.*'
+  stream = gulp.src paths.vendor + 'styles/**/*.css'
     .pipe plumber()
     .pipe concat 'vendor.css'
 
@@ -116,6 +116,9 @@ gulp.task 'watch', ->
     gulp.watch paths.src + 'scripts/**/*.coffee', ['scripts']
     gulp.watch paths.src + 'styles/**/*.styl', ['styles']
     gulp.watch [paths.src + 'index.html', paths.src + 'views/**/*.html'], ['html']
+
+    # Watch for adding new vendor scripts or styles
+    gulp.watch paths.vendor + '**', ['vendor-scripts', 'vendor-styles']
 
 
 # Helper tasks

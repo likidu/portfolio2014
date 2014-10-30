@@ -8,6 +8,7 @@ require './directives/_index'
 
 # Create Angular module and bind its requires
 app = angular.module 'works2014', []
+
 # Incl config
 angular.module 'works2014'
   .config require './routes'
@@ -19,8 +20,8 @@ app.requires = [
   'app.directives'
 ]
 
-
 # Create and bootstrap application
 angular.element document
   .ready ->
+    # Bootstrap Angular app
     angular.bootstrap document, ['works2014']
