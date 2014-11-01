@@ -13,19 +13,23 @@ module.exports =
     src  : [
       'app/views/**/*.html'
     ]
-#    dest : 'public/js'
+#    dest : 'public/views'
     dest : 'app/scripts'
+
+  images :
+    src  : 'assets/images/**/*'
+    dest : 'public/images'
+
+  jsons :
+    src  : 'assets/mockJson/*.json'
+    dest : 'public/assets/json'
 
   externals : [
     {require : 'angular', expose : 'angular'}
     {require : 'angular-ui-router', expose : 'angular-ui-router'}
     {require : 'jquery', expose : 'jquery'}
-#    {require : 'vendor/scripts/skrollr', expose : 'skrollr'}
+    {require : 'skrollr', expose : 'skrollr'}
   ]
-
-  vendorScripts :
-    src  : 'vendor/scripts/**/*.js'
-    dest : ''
 
   dist :
     root : 'public'
@@ -34,22 +38,3 @@ module.exports =
     entries    : ['./app/scripts/main.coffee']
     bundleName : 'main.js'
     vendorName : 'vendor.js'
-
-#module.exports = {
-#
-#  'serverport': 3000,
-#
-#
-#  'scripts': {
-#    'src' : 'app/js/**/*.js',
-#    'dest': 'build/js'
-#  },
-#
-#  'images': {
-#    'src' : 'app/images/**/*',
-#    'dest': 'build/images'
-#  },
-#
-#
-#
-#};

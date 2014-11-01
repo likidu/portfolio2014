@@ -1,6 +1,4 @@
-angular = require 'angular'
-
-console.log angular
+require 'angular'
 
 module.exports = angular.module 'app.controllers', []
 

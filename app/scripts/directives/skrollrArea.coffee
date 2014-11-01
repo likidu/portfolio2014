@@ -1,9 +1,11 @@
 directivesModule = require './_index'
 
+skrollr = require 'skrollr'
+
 # ---
 # @ngInject
 # ---
-skrollor = ->
+skrollrArea = ->
   restrict: 'EA'
   link: ->
     skrollr.init
@@ -12,4 +14,4 @@ skrollor = ->
 # ---
 # Add to the module
 # ---
-directivesModule.directive 'skrollor', skrollor
+directivesModule.directive 'skrollrArea', skrollrArea

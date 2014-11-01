@@ -7,3 +7,4 @@ gulp.task 'watch', ['browserSync', 'server'], ->
   gulp.watch config.styles.src, ['styles']
 #  gulp.watch config.images.src, ['images', 'reload']
   gulp.watch [config.views.src, 'app/index.html'], ['views']
+  gulp.watch config.jsons.src, ['json']

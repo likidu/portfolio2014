@@ -10,7 +10,10 @@ MainCtrl = ($scope, ProjectService) ->
 
   # Load project data
   ProjectService.get().then (projects) ->
-    $scope.exp = projects
+    $scope.works = projects
+
+    console.log $scope.works
+
 
 # ---
 # Add to the module

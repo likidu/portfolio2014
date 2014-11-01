@@ -5,7 +5,7 @@ directivesModule = require './_index'
 # ---
 parallaxSection = ->
   restrict: 'E'
-  templateUrl: 'views/templates/parallaxSection.html'
+  templateUrl: 'templates/parallaxSection.html'
   link: (scope, elem) ->
 
 

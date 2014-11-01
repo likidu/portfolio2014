@@ -9,7 +9,7 @@ ProjectService = ($q, $http) ->
   service.get = ->
     deferred = $q.defer()
 
-    $http.get '/assets/mockJson/data.json'
+    $http.get 'assets/json/data.json'
       .success (data) ->
         deferred.resolve data
       .error (err, status) ->
