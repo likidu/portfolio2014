@@ -8,7 +8,7 @@ Routes = ($stateProvider, $locationProvider, $urlRouterProvider) ->
   $stateProvider
     .state 'home',
       url: '/'
-      controller: 'MainCtrl'
+      controller: 'MainCtrl as home'
       templateUrl: 'home.html'
       title: 'Home'
 

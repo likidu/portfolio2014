@@ -6,6 +6,7 @@ module.exports =
     dest : 'public/js'
 
   styles :
+    main : 'app/styles/main.styl'
     src  : 'app/styles/**/*.styl'
     dest : 'public/css'
 
@@ -18,7 +19,15 @@ module.exports =
 
   images :
     src  : 'assets/images/**/*'
-    dest : 'public/images'
+    dest : 'public/assets/images'
+
+  vendorStyles :
+    src  : 'vendor/styles/**/*.css'
+    dest : 'public/css'
+
+  fonts :
+    src  : 'assets/fonts/**/*'
+    dest : 'public/assets/fonts'
 
   jsons :
     src  : 'assets/mockJson/*.json'
@@ -28,6 +37,7 @@ module.exports =
     {require : 'angular', expose : 'angular'}
     {require : 'angular-ui-router', expose : 'angular-ui-router'}
     {require : 'jquery', expose : 'jquery'}
+    {require : 'skrollr-stylesheets', expose: 'skrollr-stylesheets'}
     {require : 'skrollr', expose : 'skrollr'}
   ]
 

@@ -6,5 +6,4 @@ gulp.task 'dev', ['clean'], (cb) ->
 
   global.isProd = false
 
-  runSequence 'styles', 'json', 'views', 'browserify', 'watch', cb
-#  runSequence('styles', 'images', 'views', 'browserify', 'watch', cb);
+  runSequence 'styles', 'vendorStyles', 'images', 'fonts', 'json', 'views', 'browserify', 'watch', cb

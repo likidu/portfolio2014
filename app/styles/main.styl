@@ -1,2 +1,61 @@
+@import typography
+
 body
-  padding-top 60px
+  font-family proxima-nova
+
+/* Mixins */
+vendor(prop, args)
+  -webkit-{prop} args
+  -moz-{prop} args
+  {prop} args
+
+background-size(size)
+  vendor('background-size', size)
+
+position()
+  position arguments
+  z-index 1 unless @z-index
+
+four-sides-same(value)
+  sides = (top right bottom left)
+  for i in 0..3
+    side = sides[i]
+    {side} value
+
+/* Styles */
+textColor = white
+colorMicrosoft = #7cc242
+colorSAP = #fcb415
+
+projectSectionHeight = 800px
+articleWidth = 380px
+
+section *
+    z-index 2
+
+.project
+  position relative
+  z-index 50
+  width 100%
+  height projectSectionHeight
+
+  .background
+    position absolute
+    four-sides-same(0)
+    background 50% 50% no-repeat fixed
+    background-size cover
+    z-index 1
+
+    #ms-advisor-1&
+      background-image url(/assets/images/bg-ms-advisor-1.jpg)
+
+  article
+    position relative
+    width: articleWidth
+    color: textColor
+
+    #ms-advisor-1&
+      background-color colorMicrosoft
+
+    #sap-byd-finetuning&
+      background-color colorSAP

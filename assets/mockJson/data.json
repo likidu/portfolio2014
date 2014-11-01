@@ -1,12 +1,16 @@
 {
   "projects": [
     {
-      "name": "SAP Business ByDesign",
-      "description": "This was a nice project"
+      "id": "ms-advisor-1",
+      "name": "System Center Advisor",
+      "desc": "Microsoft System Center Advisor is a role model to show how to effectively utilize Windows Azure within enterprise IT domain. It proactively collects and visualize server data from all kinds of services in a central web client.",
+      "resp": "I was the lead designer for the whole product. With a small five designers team, we worked closely with over twenty engineers and PMs to deliver this product from scratch within eighteen months in a row."
+
     },
     {
-      "name": "Microsoft System Center Advisor",
-      "description": "This was another nice project"
+      "id": "sap-byd-finetuning",
+      "name": "Business ByDesign Fine-tuning",
+      "desc": "Beyond personalization for the layout, further fine-tuning ability enabled customers to adjust their business flow for day to day business. To cover this, a UI field repository was introduced within the Personalization sidebar."
     }
   ]
 }

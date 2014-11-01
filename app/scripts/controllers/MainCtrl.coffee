@@ -6,14 +6,15 @@ controllersModule = require './_index'
 
 MainCtrl = ($scope, ProjectService) ->
 
-  $scope.title = 'This is a running app now...'
+  vm = @
+
+  vm.title = 'This is a running app now...'
 
   # Load project data
   ProjectService.get().then (projects) ->
-    $scope.works = projects
+    vm.works = projects
 
-    console.log $scope.works
-
+  return vm
 
 # ---
 # Add to the module

@@ -7,7 +7,7 @@ browserSync = require 'browser-sync'
 nib = require 'nib'
 
 gulp.task 'styles', ->
-  gulp.src config.styles.src
+  gulp.src config.styles.main
     .pipe stylus use: nib()
     .on 'error', handleErrors
     .pipe gulp.dest config.styles.dest

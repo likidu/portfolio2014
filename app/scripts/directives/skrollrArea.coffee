@@ -1,5 +1,6 @@
 directivesModule = require './_index'
 
+skrollrStylesheets = require 'skrollr-stylesheets'
 skrollr = require 'skrollr'
 
 # ---
