@@ -21,6 +21,10 @@ module.exports =
     src  : 'assets/images/**/*'
     dest : 'public/assets/images'
 
+  vendorScripts :
+    src : 'vendor/scripts/**/*.js'
+    dest: 'public/js'
+
   vendorStyles :
     src  : 'vendor/styles/**/*.css'
     dest : 'public/css'
@@ -37,8 +41,8 @@ module.exports =
     {require : 'angular', expose : 'angular'}
     {require : 'angular-ui-router', expose : 'angular-ui-router'}
     {require : 'jquery', expose : 'jquery'}
-    {require : 'skrollr-stylesheets', expose: 'skrollr-stylesheets'}
-    {require : 'skrollr', expose : 'skrollr'}
+    {require : './vendor/scripts/skrollr-css', expose : 'skrollr-css'}
+    {require : './vendor/scripts/skrollr', expose : 'skrollr'}
   ]
 
   dist :

@@ -1,6 +1,6 @@
 directivesModule = require './_index'
 
-skrollrStylesheets = require 'skrollr-stylesheets'
+skrollrCss = require 'skrollr-css'
 skrollr = require 'skrollr'
 
 # ---
@@ -9,8 +9,8 @@ skrollr = require 'skrollr'
 skrollrArea = ->
   restrict: 'EA'
   link: ->
-    skrollr.init
-      forceHeight: false
+    skrollrStylesheets.applyKeyframeAttributes()
+    skrollr.init forceHeight: false
 
 # ---
 # Add to the module

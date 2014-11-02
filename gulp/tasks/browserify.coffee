@@ -26,6 +26,8 @@ buildScript = (file) ->
     else
       vendorBundler.require external.require
 
+#  vendorBundler.require './vendor/scripts/skrollr-css.js', expose: 'skrollr-css'
+
   # Application bundler
   bundler = browserify
     entries      : config.browserify.entries
@@ -39,8 +41,11 @@ buildScript = (file) ->
     bundler = watchify bundler
     bundler.on 'update', -> rebundle()
 
+  # Enable Coffeescript and prepare for Angular minification with ng-annotate
   bundler.transform [coffeeify, ngAnnotate]
-  bundler.external config.externals.map (external) -> external.require
+
+  # Externalize libs
+  bundler.external config.externals.map (external) -> external.expose
 
   rebundle = ->
     stream = bundler.bundle()

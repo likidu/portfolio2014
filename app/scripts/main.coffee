@@ -3,6 +3,7 @@
 # http://stackoverflow.com/questions/25088406/cant-get-external-library-with-browserify-and-debrowserify
 # ---
 #angular = require 'angular'
+
 require 'angular'
 
 # Angular modules
@@ -14,7 +15,6 @@ require './services/_index'
 require './directives/_index'
 
 # Create Angular module and bind its requires
-
 requires = [
   'ui.router'
   'templates'
